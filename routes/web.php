@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,8 @@ Route::get('/', function () {
 })->middleware(['auth'])->name('dashboard');*/
 
 Route::get('/dashboard',[DashboardController::class,'index']);
+Route::get('/category',[CategoryController::class,'index']);
+Route::get('/post',[PostController::class,'index']);
 
 
 require __DIR__.'/auth.php';
